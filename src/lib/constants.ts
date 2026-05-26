@@ -37,12 +37,6 @@ export const PROBLEM_CARDS = [
       "Months-long hiring pipelines delay launches and burn runway before a single line ships.",
     icon: "Clock" as const,
   },
-  {
-    title: "Scaling Challenges",
-    description:
-      "Growing from 2 to 10 engineers quickly is nearly impossible with traditional hiring alone.",
-    icon: "TrendingDown" as const,
-  },
 ] as const;
 
 export const SOLUTION_FEATURES = [

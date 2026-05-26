@@ -65,19 +65,24 @@ export default function FeatureCard({
       whileHover={{ y: -4 }}
       transition={{ duration: 0.3 }}
     >
-      <div
-        className={cn(
-          "mb-4 flex h-11 w-11 items-center justify-center rounded-xl",
-          variant === "accent"
-            ? "bg-gradient-accent text-white shadow-brand"
-            : colorClass
-        )}
-      >
-        <Icon className="h-5 w-5" />
-      </div>
-      <h3 className="mb-2 font-display text-lg font-semibold text-primary">
-        {title}
-      </h3>
+      <div className="flex items-center gap-3 mb-3">
+
+<div
+  className={cn(
+    "flex h-11 w-11 items-center justify-center rounded-xl",
+    variant === "accent"
+      ? "bg-gradient-accent text-white shadow-brand"
+      : colorClass
+  )}
+>
+  <Icon className="h-5 w-5" />
+</div>
+
+<h3 className="font-display text-lg font-semibold text-primary">
+  {title}
+</h3>
+
+</div>
       <p className="text-sm leading-relaxed text-secondary">{description}</p>
     </motion.div>
   );
