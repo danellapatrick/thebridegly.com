@@ -21,11 +21,12 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Environment Variables
 
-Create `.env.local` to customize Calendly:
+Copy `.env.example` to `.env.local` and fill in:
 
-```env
-NEXT_PUBLIC_CALENDLY_URL=https://calendly.com/your-account/intro-call
-```
+- `NEXT_PUBLIC_CALENDLY_URL` — your Calendly event link
+- `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` — for contact form leads (see `supabase/leads.sql`)
+
+Run `supabase/leads.sql` once in the Supabase SQL Editor before testing the contact form.
 
 ## Project Structure
 
