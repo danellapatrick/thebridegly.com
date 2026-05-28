@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
-import { CALENDLY_URL } from "@/lib/constants";
+import { CALENDLY_URL, getCalendlyEmbedUrl } from "@/lib/constants";
 
 interface CalendlyModalProps {
   isOpen: boolean;
@@ -43,12 +43,24 @@ export default function CalendlyModal({ isOpen, onClose }: CalendlyModalProps) {
             </div>
             <div className="min-h-0 flex-1">
               <iframe
-                src={CALENDLY_URL}
+                src={getCalendlyEmbedUrl()}
                 title="Schedule a call with TheBridgely"
                 className="h-full min-h-[500px] w-full"
                 frameBorder="0"
+                allow="fullscreen"
               />
             </div>
+            <p className="border-t border-border px-4 py-3 text-center text-sm text-secondary sm:px-6">
+              Calendar not loading?{" "}
+              <a
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-brand hover:text-brand-dark"
+              >
+                Open booking page in a new tab
+              </a>
+            </p>
           </motion.div>
         </>
       )}

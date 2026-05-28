@@ -8,7 +8,12 @@ export const NAV_LINKS = [
 
 export const CALENDLY_URL =
   process.env.NEXT_PUBLIC_CALENDLY_URL ||
-  "https://calendly.com/thebridgely/intro-call";
+  "https://calendly.com/alishba-javed2001/30min";
+
+export function getCalendlyEmbedUrl(): string {
+  const base = CALENDLY_URL.replace(/\/$/, "").split("?")[0];
+  return `${base}?embed=true&hide_landing_page_details=1&hide_gdpr_banner=1`;
+}
 
 export const CONTACT_EMAIL = "hello@thebridgely.com";
 
