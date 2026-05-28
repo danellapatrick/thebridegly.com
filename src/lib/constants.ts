@@ -17,6 +17,16 @@ export function getCalendlyEmbedUrl(): string {
 
 export const CONTACT_EMAIL = "hello@thebridgely.com";
 
+export const LEAD_INTENTS = [
+  { value: "individual", label: "Hire individual talent" },
+  { value: "embedded_team", label: "Build an embedded engineering team" },
+  { value: "recruitment", label: "Recruitment / executive hiring" },
+] as const;
+
+export const LEAD_INTENT_VALUES = LEAD_INTENTS.map((i) => i.value);
+
+export type LeadIntent = (typeof LEAD_INTENTS)[number]["value"];
+
 export const TRUST_BADGES = [
   "Embedded Teams Ready",
   "Individual Talent Available",
