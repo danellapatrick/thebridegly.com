@@ -6,7 +6,11 @@ import StepTimeline from "@/components/StepTimeline";
 import Button from "@/components/ui/Button";
 import { fadeUp } from "@/lib/motion";
 
-export default function HowItWorksSection() {
+interface HowItWorksSectionProps {
+  onBookCall: () => void;
+}
+
+export default function HowItWorksSection({ onBookCall }: HowItWorksSectionProps) {
   return (
     <SectionWrapper id="how-it-works" background="soft" label="Process">
       
@@ -34,7 +38,7 @@ export default function HowItWorksSection() {
         viewport={{ once: true }}
         className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4"
       >
-        <Button variant="primary" size="lg">
+        <Button variant="primary" size="lg" onClick={onBookCall}>
           Book a Demo
         </Button>
 

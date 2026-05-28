@@ -42,7 +42,11 @@ const SERVICES: ServiceItem[] = [
   },
 ];
 
-export default function ServicesSection({ onBookCall }: any) {
+interface ServicesSectionProps {
+  onBookCall: () => void;
+}
+
+export default function ServicesSection({ onBookCall }: ServicesSectionProps) {
   return (
     <SectionWrapper id="services" background="mint" label="What We Offer">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

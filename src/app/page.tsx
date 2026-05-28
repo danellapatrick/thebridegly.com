@@ -27,11 +27,11 @@ export default function Home() {
       <main>
         <HeroSection onBookCall={openCalendly} />
         <TrustedBySection />
-        <ProblemSection />
+        <ProblemSection onBookCall={openCalendly} />
         <SolutionSection />
-        <ServicesSection />
+        <ServicesSection onBookCall={openCalendly} />
         <WhyPakistanSection />
-        <HowItWorksSection />
+        <HowItWorksSection onBookCall={openCalendly} />
         <TeamSection />
         <AboutSection />
         <CTASection onBookCall={openCalendly} />
