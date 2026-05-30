@@ -44,14 +44,23 @@ export default function ProblemSection({ onBookCall }: HeroSectionProps) {
 
           
   {/* BIG IMAGE BLOCK (TAKES VISUAL SPACE) */}
-  <div className="mt-6 relative w-full h-[400px] lg:h-[350px]">
-    <Image
-      src="/images/hiring_images.png"
-      alt="Hiring challenges illustration"
-      fill
-      className="object-contain"
-    />
-  </div>
+  <div className="mt-6 relative w-full h-[500px] lg:h-[350px]">
+  {/* Mobile Image */}
+  <Image
+    src="/images/hiring_images2.png"
+    alt="Hiring challenges illustration"
+    fill
+    className="object-contain md:hidden"
+  />
+
+  {/* Desktop Image */}
+  <Image
+    src="/images/hiring_images.png"
+    alt="Hiring challenges illustration"
+    fill
+    className="hidden md:block object-contain"
+  />
+</div>
           </div>
 
           {/* RIGHT SIDE - CARDS */}
