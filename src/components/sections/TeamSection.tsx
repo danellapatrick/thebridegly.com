@@ -7,8 +7,17 @@ import { fadeUp } from "@/lib/motion";
 
 export default function TeamSection() {
   return (
-    <SectionWrapper id="team" background="white" label="Your Dedicated Engineering Unit">
+    <SectionWrapper id="team" background="white" className="overflow-x-hidden">
       <div className="mx-auto max-w-3xl text-center">
+        <motion.p
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="section-label mb-3 select-none"
+        >
+          Your Dedicated Engineering Unit
+        </motion.p>
         <motion.h2
           variants={fadeUp}
           initial="hidden"

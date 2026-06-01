@@ -36,7 +36,7 @@ export default function Footer() {
             <h4 className="font-display text-sm font-semibold text-white">Company</h4>
             <ul className="mt-4 space-y-3">
               {FOOTER_LINKS.company.map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
                   <a
                     href={link.href}
                     className="text-sm text-stone-400 transition-colors hover:text-brand"
@@ -52,7 +52,7 @@ export default function Footer() {
             <h4 className="font-display text-sm font-semibold text-white">Connect</h4>
             <ul className="mt-4 space-y-3">
               {FOOTER_LINKS.connect.map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
                   <a
                     href={link.href}
                     className="text-sm text-stone-400 transition-colors hover:text-brand-light"

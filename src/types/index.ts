@@ -1,4 +1,6 @@
-import type { LeadIntent } from "@/lib/constants";
+import type { LeadIntent, VETTED_TEAM } from "@/lib/constants";
+
+export type VettedTeamMember = (typeof VETTED_TEAM)[number];
 
 export interface TeamMember {
   name: string;
