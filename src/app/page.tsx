@@ -8,12 +8,12 @@ import ProblemSection from "@/components/sections/ProblemSection";
 import SolutionSection from "@/components/sections/SolutionSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 import WhyPakistanSection from "@/components/sections/WhyPakistanSection";
-import HowItWorksSection from "@/components/sections/HowItWorksSection";
 import TeamSection from "@/components/sections/TeamSection";
 import AboutSection from "@/components/sections/AboutSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import CalendlyModal from "@/components/CalendlyModal";
+import HowItWorksSection from "@/components/sections/HowItWorksSection";
 
 export default function Home() {
   const [calendlyOpen, setCalendlyOpen] = useState(false);
@@ -26,14 +26,13 @@ export default function Home() {
       <Navbar onBookCall={openCalendly} />
       <main>
         <HeroSection onBookCall={openCalendly} />
-        <TrustedBySection />
-        <ProblemSection onBookCall={openCalendly} />
-        <SolutionSection />
+        <AboutSection />
+        <TeamSection />
         <ServicesSection onBookCall={openCalendly} />
         <WhyPakistanSection />
-        <HowItWorksSection onBookCall={openCalendly} />
-        <TeamSection />
-        <AboutSection />
+        <ProblemSection onBookCall={openCalendly} />
+        <HowItWorksSection />
+
         <CTASection onBookCall={openCalendly} />
       </main>
       <Footer />
