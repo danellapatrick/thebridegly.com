@@ -1,8 +1,8 @@
 export const NAV_LINKS = [
-  { label: "Services", href: "#services" },
   { label: "Teams", href: "#team" },
-  { label: "How It Works", href: "#how-it-works" },
+  { label: "Services", href: "#services" },
   { label: "Why Pakistan", href: "#why-pakistan" },
+  { label: "How It Works", href: "#how-it-works" },
   { label: "Contact", href: "#contact" },
 ] as const;
 
@@ -85,7 +85,8 @@ export const BENTO_SERVICES = [
   {
     id: "individual",
     title: "Hire Individual Talent",
-    description: "Vetted engineers for specific roles when you need targeted expertise.",
+    description:
+      "Vetted engineers for specific roles when you need targeted expertise.",
     icon: "UserPlus" as const,
     featured: false,
     span: "md:col-span-1 md:row-span-1",
@@ -307,7 +308,8 @@ export const VETTED_TEAM = [
       "CI/CD QA Validation",
       "Release Quality Assurance",
     ],
-    highlight: "70% more cost-effective than US/UK hiring — without compromising quality",
+    highlight:
+      "70% more cost-effective than US/UK hiring — without compromising quality",
     featured: true,
   },
 ] as const;
