@@ -257,6 +257,74 @@ export const TRUSTED_BY_TEXT =
 export const VETTED_TEAM = [
   {
     id: "1",
+    name: "Mishal Zehra",
+    role: "Offshore Recruitment Partner",
+    image: "/images/team/mishal-zehra.jpg",
+    summary:
+      "Helping startups build high-performing remote teams across Engineering, Product, GTM, and Operations.",
+    skills: [
+      "Embedded Recruitment",
+      "Technical Hiring",
+      "Talent Sourcing",
+      "Team Building",
+    ],
+    highlight:
+      "Embedded hiring partner for Engineering, Product, GTM, and Operations teams",
+    linkedin: "https://linkedin.com/in/mishalzehra",
+  },
+  {
+    id: "2",
+    name: "Alishba Javed",
+    role: "Software Engineer",
+    image: "/images/team/alishba-javed.jpg",
+    summary:
+      "Software engineer with deep roots in backend systems, applied AI, and ML/DL — spanning scalable API design, data pipelines, model training, and cloud deployment. Scopes systems cleanly, maintains databases, and ships models that hold up in production.",
+    skills: [
+      "Backend",
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Deep Learning",
+      "Database Management",
+      "Cloud Infrastructure",
+
+    ],
+    highlight:
+      "Production-grade ML models and scalable backend systems — built end-to-end",
+    linkedin: "https://linkedin.com/in/alishbajaved",
+    github: "https://github.com/alishba-javed-2001",
+  },
+  {
+    id: "3",
+    name: "Areeba Asad",
+    role: "Full Stack Engineer",
+    image: "/images/team/areeba-asad.jpg",
+    summary:
+      "Software engineer focused on building end-to-end digital products — from intuitive frontend experiences to scalable backend systems. Experienced in designing APIs, developing modern web applications, managing databases, and deploying production-ready systems that are reliable, secure, and performant.",
+    skills: ["React", "Next.js", "Python", "Django"],
+    highlight:
+      "Delivers reliable full-stack products from UI through API to deployment",
+    linkedin: "https://www.linkedin.com/in/areebaasadullah",
+  },
+  {
+    id: "4",
+    name: "Danella Patrick",
+    role: "QA Automation Engineer",
+    image: "/images/team/danella-patrick.jpg",
+    summary:
+      "QA automation and manual testing specialist for global product teams — building robust test suites, automating regression with Playwright and Selenium, and keeping releases stable across web and API layers.",
+    skills: [
+      "Selenium",
+      "Playwright",
+      "Python",
+      "JavaScript",
+      "Manual Testing",
+    ],
+    highlight:
+      "Automated release pipelines with Playwright & Selenium — faster, safer shipping",
+    linkedin: "https://www.linkedin.com/in/danella-patrick/",
+  },
+  {
+    id: "5",
     name: "Ahmad Khan",
     role: "Senior Full-Stack Engineer",
     image:
@@ -266,7 +334,7 @@ export const VETTED_TEAM = [
     highlight: "Shipped 3 products from MVP to Series A",
   },
   {
-    id: "2",
+    id: "6",
     name: "Hina Fatima",
     role: "QA Engineer",
     image:
@@ -276,7 +344,7 @@ export const VETTED_TEAM = [
     highlight: "Reduced release defects by 60% for a UK SaaS client",
   },
   {
-    id: "3",
+    id: "7",
     name: "Omar Hassan",
     role: "Backend Engineer",
     image:
@@ -286,7 +354,7 @@ export const VETTED_TEAM = [
     highlight: "Built payment infra handling 2M+ monthly transactions",
   },
   {
-    id: "4",
+    id: "8",
     name: "Sara Malik",
     role: "UI/UX Designer",
     image:
@@ -294,23 +362,6 @@ export const VETTED_TEAM = [
     summary: "Product designer for B2B SaaS and mobile-first experiences.",
     skills: ["Figma", "Design Systems", "UX Research", "Prototyping"],
     highlight: "Redesigned onboarding — 40% uplift in activation",
-  },
-  {
-    id: "5",
-    name: "Danella Patrick",
-    role: "SQA Engineer",
-    image: "/images/hero-engineer.png",
-    summary:
-      "Embedded QA specialist ensuring release quality for global product teams.",
-    skills: [
-      "Manual Testing (Smoke, Regression)",
-      "Automation (Selenium, API Testing)",
-      "CI/CD QA Validation",
-      "Release Quality Assurance",
-    ],
-    highlight:
-      "70% more cost-effective than US/UK hiring — without compromising quality",
-    featured: true,
   },
 ] as const;
 
