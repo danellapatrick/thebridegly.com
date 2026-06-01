@@ -14,6 +14,7 @@ import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import CalendlyModal from "@/components/CalendlyModal";
 import HowItWorksSection from "@/components/sections/HowItWorksSection";
+import InsightsSection from "@/components/sections/InsightsSection";
 
 export default function Home() {
   const [calendlyOpen, setCalendlyOpen] = useState(false);
@@ -33,6 +34,7 @@ export default function Home() {
         <ProblemSection onBookCall={openCalendly} />
         <HowItWorksSection />
 
+        <InsightsSection />
         <CTASection onBookCall={openCalendly} />
       </main>
       <Footer />
