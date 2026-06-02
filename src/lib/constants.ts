@@ -286,7 +286,6 @@ export const VETTED_TEAM = [
       "Deep Learning",
       "Database Management",
       "Cloud Infrastructure",
-
     ],
     highlight:
       "Production-grade ML models and scalable backend systems — built end-to-end",
@@ -304,6 +303,7 @@ export const VETTED_TEAM = [
     highlight:
       "Delivers reliable full-stack products from UI through API to deployment",
     linkedin: "https://www.linkedin.com/in/areebaasadullah",
+    github: "https://github.com/areebaka",
   },
   {
     id: "4",
