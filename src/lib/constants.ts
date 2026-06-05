@@ -266,7 +266,6 @@ export const VETTED_TEAM = [
       "Embedded Recruitment",
       "Technical Hiring",
       "Talent Sourcing",
-      "Team Building",
     ],
     highlight:
       "Embedded hiring partner for Engineering, Product, GTM, and Operations teams",
@@ -334,7 +333,7 @@ export const VETTED_TEAM = [
     highlight: "Shipped 3 products from MVP to Series A",
   },
   {
-    id: "6",
+    id: "2",
     name: "Hina Fatima",
     role: "QA Engineer",
     image:
@@ -344,7 +343,7 @@ export const VETTED_TEAM = [
     highlight: "Reduced release defects by 60% for a UK SaaS client",
   },
   {
-    id: "7",
+    id: "3",
     name: "Omar Hassan",
     role: "Backend Engineer",
     image:
@@ -354,7 +353,7 @@ export const VETTED_TEAM = [
     highlight: "Built payment infra handling 2M+ monthly transactions",
   },
   {
-    id: "8",
+    id: "4",
     name: "Sara Malik",
     role: "UI/UX Designer",
     image:
@@ -362,6 +361,23 @@ export const VETTED_TEAM = [
     summary: "Product designer for B2B SaaS and mobile-first experiences.",
     skills: ["Figma", "Design Systems", "UX Research", "Prototyping"],
     highlight: "Redesigned onboarding — 40% uplift in activation",
+  },
+  {
+    id: "5",
+    name: "Danella Patrick",
+    role: "SQA Engineer",
+    image: "/images/hero-engineer.png",
+    summary:
+      "Embedded QA specialist ensuring release quality for global product teams.",
+    skills: [
+      "Manual Testing (Smoke, Regression)",
+      "Automation (Selenium, API Testing)",
+      "CI/CD QA Validation",
+      "Release Quality Assurance",
+    ],
+    highlight:
+      "70% more cost-effective than US/UK hiring — without compromising quality",
+    featured: true,
   },
 ] as const;
 
