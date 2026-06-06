@@ -186,7 +186,7 @@ export default function VettedTeamGallery() {
       name: "Muhammad Ateeb",
       role: "UI/UX Designer | AI Engineer ",
   
-      image: "/images/team/ateeb.png",
+      image: "/images/team/Ateeb.png",
   
       email: "ateebm11@gmail.com",
       phone: "+92-323-2756086",
@@ -532,7 +532,7 @@ export default function VettedTeamGallery() {
       name: "Areeba Asad",
       role: "Software Engineer | AI & Machine Learning Engineer",
     
-      image: "/images/team/areeba.png",
+      image: "/images/team/Areeba.png",
     
       email: "areebaasad07@gmail.com",
       phone: "+92-313-2613459",
@@ -675,7 +675,7 @@ export default function VettedTeamGallery() {
       name: "Mishal Zehra",
       role: "Senior HR Specialist | Talent Acquisition Lead",
     
-      image: "/images/team/mishal.png",
+      image: "/images/team/Mishal.png",
     
       email: "mish2jaffri@gmail.com",
       phone: "+92-332-2674322",
@@ -817,7 +817,7 @@ export default function VettedTeamGallery() {
     },
     {
       id: "ahmed-sufyan-samee",
-      name: "Ahmed Sufyan Samee",
+      name: "Ahmed Sufiyan Samee",
       role: "Senior SEO Specialist | Digital Marketing Strategist",
     
       image: "/images/team/Sufiyan.png",
@@ -939,7 +939,7 @@ export default function VettedTeamGallery() {
       name: "Alishba Javed",
       role: "Software Engineer | AI & Machine Learning Engineer",
     
-      image: "/images/team/alishba.png",
+      image: "/images/team/Alishba.png",
     
       email: "alishba.javed2001@gmail.com",
       phone: "+92-332-2406533",
