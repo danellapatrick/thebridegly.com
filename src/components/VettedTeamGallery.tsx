@@ -380,7 +380,7 @@ export default function VettedTeamGallery() {
       name: "Malaika Afridi",
       role: "Senior Software Engineer (Frontend)",
     
-      image: "/images/team/malaika.png",
+      image: "/images/team/Malaika.png",
     
       email: "malaikaafridi22@gmail.com",
       phone: "+92-335-3774501",
