@@ -47,6 +47,11 @@ interface TeamMember {
     institute: string;
     year?: string;
   }[];
+  community? : {
+    role : string;
+    organization : string;
+    points : string[]
+  }[];
 }
 
 export default function VettedTeamGallery() {
@@ -468,7 +473,7 @@ export default function VettedTeamGallery() {
         {
           title: "React.js Developer (Remote)",
           company: "Kpibar",
-          duration: "Nov 2022 – Dec 2022",
+          duration: "Nov 2022 - Dec 2022",
           points: [
             "Built dashboard UI using React and integrated third-party APIs",
             "Converted PSD designs into reusable React components"
@@ -1268,7 +1273,7 @@ export default function VettedTeamGallery() {
 
 {selectedMember.website && (
     <a
-      href={selectedMember.website.startsWith("http") ? selectedMember.website : `https://${member.website}`}
+      href={selectedMember.website.startsWith("http") ? selectedMember.website : `https://${selectedMember.website}`}
       target="_blank"
       className="text-white/60 hover:text-[#54BD95] transition"
     >

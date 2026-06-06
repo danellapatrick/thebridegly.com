@@ -468,14 +468,14 @@ export const TECH_STACK_LOGOS = [
 
 export const FOOTER_LINKS = {
   company: [
-    { label: "Services", href: "#services" },
-    { label: "Team", href: "#team" },
-    { label: "How It Works", href: "#how-it-works" },
-    { label: "Why Pakistan", href: "#why-pakistan" },
+    { label: "Services", href: "#services" , id : 'services' },
+    { label: "Team", href: "#team"  , id : 'team'},
+    { label: "How It Works", href: "#how-it-works"  , id : 'how-it-works'},
+    { label: "Why Pakistan", href: "#why-pakistan" , id  : 'why-pakistan' },
   ],
   connect: [
-    { label: "Contact", href: "#contact" },
-    { label: "Book a Call", href: "#contact" },
+    { label: "Contact", href: "#contact" , id : 'contact'},
+    { label: "Book a Call", href: "#contact" , id : 'book-a-call' },
   ],
 } as const;
 
