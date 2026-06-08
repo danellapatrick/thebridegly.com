@@ -480,6 +480,6 @@ export const FOOTER_LINKS = {
 } as const;
 
 export const SOCIAL_LINKS = [
-  { label: "LinkedIn", href: "https://linkedin.com/company/thebridgely" },
-  { label: "Twitter", href: "https://twitter.com/thebridgely" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/thebridgley.com/" },
+  { label: "Instagram", href: "https://www.instagram.com/" },
 ] as const;

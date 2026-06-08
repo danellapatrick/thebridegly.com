@@ -1,6 +1,6 @@
 "use client";
 
-import { Linkedin, Twitter, Mail } from "lucide-react";
+import { Linkedin, Twitter, Mail, Instagram } from "lucide-react";
 import {
   FOOTER_LINKS,
   SOCIAL_LINKS,
@@ -77,9 +77,9 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-lg border border-stone-700 bg-stone-800/50 p-2 text-stone-400 transition-colors hover:border-brand/50 hover:text-brand"
-                aria-label="Twitter"
+                aria-label="Instagram"
               >
-                <Twitter className="h-4 w-4" />
+                <Instagram className="h-4 w-4" />
               </a>
             </div>
           </div>
