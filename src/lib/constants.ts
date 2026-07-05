@@ -7,8 +7,7 @@ export const NAV_LINKS = [
 ] as const;
 
 export const CALENDLY_URL =
-  process.env.NEXT_PUBLIC_CALENDLY_URL ||
-  "https://calendly.com/alishba-javed2001/30min";
+  process.env.NEXT_PUBLIC_CALENDLY_URL ?? "";
 
 export function getCalendlyEmbedUrl(): string {
   const base = CALENDLY_URL.replace(/\/$/, "").split("?")[0];
@@ -16,6 +15,9 @@ export function getCalendlyEmbedUrl(): string {
 }
 
 export const CONTACT_EMAIL = "hello@thebridgely.com";
+
+export const LEAD_PRIMARY_NOTIFICATION_EMAIL = "thebridgely@gmail.com";
+
 
 export const LEAD_INTENTS = [
   { value: "individual", label: "Hire individual talent" },

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sendLeadNotificationEmails } from "@/lib/email/send-lead-notifications";
 import { createSupabaseAdmin } from "@/lib/supabase/server";
 import { LEAD_INTENT_VALUES, type LeadIntent } from "@/lib/constants";
 
@@ -78,6 +79,8 @@ export async function POST(request: Request) {
         { status: 500 }
       );
     }
+
+    await sendLeadNotificationEmails(row);
 
     return NextResponse.json({ ok: true }, { status: 201 });
   } catch (err) {
