@@ -31,6 +31,9 @@ export const metadata: Metadata = {
       "Build and scale with pre-vetted Pakistani engineering teams embedded directly into your product.",
     type: "website",
   },
+  icons: {
+    icon: "images/favicon.png",
+  },
 };
 
 export default function RootLayout({

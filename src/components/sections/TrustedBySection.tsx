@@ -14,8 +14,10 @@ export default function TrustedBySection() {
         viewport={{ once: true, margin: "-40px" }}
         variants={fadeUp}
       >
-        <p className="text-lg font-medium leading-relaxed text-secondary md:text-xl">
-          {TRUSTED_BY_TEXT}
+        <p className="section-label">About TheBridgely</p>
+        <p className="mt-6 text-xl leading-relaxed text-secondary sm:text-2xl">
+          Founded by builders and technology leaders passionate about connecting
+          global companies with exceptional Pakistani engineering talent.
         </p>
       </motion.div>
     </section>
