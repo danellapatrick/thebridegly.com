@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import SectionWrapper from "@/components/SectionWrapper";
 import Button from "@/components/ui/Button";
+import { trackCtaClick, type OnBookCall } from "@/lib/analytics/gtm";
 import { fadeUp } from "@/lib/motion";
 
 import {
@@ -43,7 +44,7 @@ const SERVICES: ServiceItem[] = [
 ];
 
 interface ServicesSectionProps {
-  onBookCall: () => void;
+  onBookCall: OnBookCall;
 }
 
 export default function ServicesSection({ onBookCall }: ServicesSectionProps) {
@@ -75,11 +76,18 @@ export default function ServicesSection({ onBookCall }: ServicesSectionProps) {
 
             {/* CTA */}
             <motion.div className="mt-6 flex flex-col sm:flex-row gap-3">
-              <Button variant="primary" size="lg" onClick={onBookCall}>
+              <Button variant="primary" size="lg" onClick={() => onBookCall("services")}>
                 Book a Call
               </Button>
 
-              <Button variant="secondary" size="lg" href="#team">
+              <Button
+                variant="secondary"
+                size="lg"
+                href="#team"
+                onClick={() =>
+                  trackCtaClick("services", "view_team", "Meet Our Team")
+                }
+              >
                 Meet Our Team
               </Button>
             </motion.div>

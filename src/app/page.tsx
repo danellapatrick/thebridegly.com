@@ -15,12 +15,20 @@ import Footer from "@/components/Footer";
 import CalendlyModal from "@/components/CalendlyModal";
 import HowItWorksSection from "@/components/sections/HowItWorksSection";
 import InsightsSection from "@/components/sections/InsightsSection";
+import { pushGtmEvent, type BookCallSource } from "@/lib/analytics/gtm";
 
 export default function Home() {
   const [calendlyOpen, setCalendlyOpen] = useState(false);
 
-  const openCalendly = useCallback(() => setCalendlyOpen(true), []);
-  const closeCalendly = useCallback(() => setCalendlyOpen(false), []);
+  const openCalendly = useCallback((source: BookCallSource) => {
+    pushGtmEvent("book_call_click", { section: source });
+    setCalendlyOpen(true);
+    pushGtmEvent("calendly_modal_open", { section: source });
+  }, []);
+
+  const closeCalendly = useCallback(() => {
+    setCalendlyOpen(false);
+  }, []);
 
   return (
     <>

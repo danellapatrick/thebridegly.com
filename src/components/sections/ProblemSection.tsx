@@ -7,9 +7,10 @@ import { PROBLEM_CARDS } from "@/lib/constants";
 import { staggerContainer, fadeUp } from "@/lib/motion";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
+import { trackCtaClick, type OnBookCall } from "@/lib/analytics/gtm";
 
 interface HeroSectionProps {
-  onBookCall: () => void;
+  onBookCall: OnBookCall;
 }
 
 export default function ProblemSection({ onBookCall }: HeroSectionProps) {
@@ -33,11 +34,18 @@ export default function ProblemSection({ onBookCall }: HeroSectionProps) {
               variants={fadeUp}
               className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center"
             >
-              <Button variant="primary" size="lg" onClick={onBookCall}>
+              <Button variant="primary" size="lg" onClick={() => onBookCall("problem")}>
                 Book a Call Now
               </Button>
 
-              <Button variant="secondary" size="lg" href="#team">
+              <Button
+                variant="secondary"
+                size="lg"
+                href="#team"
+                onClick={() =>
+                  trackCtaClick("problem", "view_team", "Meet Our Team")
+                }
+              >
                 Meet Our Team
               </Button>
             </motion.div>

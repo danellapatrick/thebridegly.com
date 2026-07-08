@@ -6,11 +6,13 @@ create table if not exists public.leads (
   name text not null,
   email text not null,
   company text,
-  intent text not null,
+  intent text not null check (intent in ('individual', 'embedded_team', 'recruitment')),
   requirements text,
   message text
 );
 
+create index if not exists leads_created_at_idx on public.leads (created_at desc);
+
 alter table public.leads enable row level security;
 
--- No public access; inserts go through Next.js API using the service role key.
+-- No public policies: inserts go through Next.js API using the service role key only.

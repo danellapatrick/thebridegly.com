@@ -6,9 +6,10 @@ import { CheckCircle2, PanelBottom } from "lucide-react";
 import { TRUST_BADGES } from "@/lib/constants";
 import { fadeUp } from "@/lib/motion";
 import Button from "@/components/ui/Button";
+import { trackCtaClick, type OnBookCall } from "@/lib/analytics/gtm";
 
 interface HeroSectionProps {
-  onBookCall: () => void;
+  onBookCall: OnBookCall;
 }
 
 export default function HeroSection({ onBookCall }: HeroSectionProps) {
@@ -59,10 +60,15 @@ export default function HeroSection({ onBookCall }: HeroSectionProps) {
               variants={fadeUp}
               className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center"
             >
-              <Button variant="primary" size="lg" onClick={onBookCall}>
+              <Button variant="primary" size="lg" onClick={() => onBookCall("hero")}>
                 Book a Call Now
               </Button>
-              <Button variant="secondary" size="lg" href="#team">
+              <Button
+                variant="secondary"
+                size="lg"
+                href="#team"
+                onClick={() => trackCtaClick("hero", "view_team", "Meet Our Team")}
+              >
                 Meet Our Team
               </Button>
             </motion.div>

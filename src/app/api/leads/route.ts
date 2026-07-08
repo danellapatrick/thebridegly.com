@@ -73,7 +73,7 @@ export async function POST(request: Request) {
     const { error } = await supabase.from("leads").insert(row);
 
     if (error) {
-      console.error("[leads] Supabase insert error:", error.message);
+      console.error("[leads] Supabase insert error:", error.message, error.code);
       return NextResponse.json(
         { error: "Could not save your message. Please try again later." },
         { status: 500 }

@@ -7,9 +7,10 @@ import { NAV_LINKS } from "@/lib/constants";
 import Button from "@/components/ui/Button";
 import Logo from "@/components/Logo";
 import { cn } from "@/lib/utils";
+import { trackNavClick, type OnBookCall } from "@/lib/analytics/gtm";
 
 interface NavbarProps {
-  onBookCall: () => void;
+  onBookCall: OnBookCall;
 }
 
 export default function Navbar({ onBookCall }: NavbarProps) {
@@ -47,6 +48,7 @@ export default function Navbar({ onBookCall }: NavbarProps) {
               key={link.href}
               href={link.href}
               className="text-sm font-medium text-secondary transition-colors hover:text-brand-dark"
+              onClick={() => trackNavClick(link.label, link.href, "navbar")}
             >
               {link.label}
             </a>
@@ -54,7 +56,7 @@ export default function Navbar({ onBookCall }: NavbarProps) {
         </div>
 
         <div className="hidden md:block">
-          <Button variant="primary" size="md" onClick={onBookCall}>
+          <Button variant="primary" size="md" onClick={() => onBookCall("navbar")}>
             Book a Call Now
           </Button>
         </div>
@@ -83,7 +85,10 @@ export default function Navbar({ onBookCall }: NavbarProps) {
                   key={link.href}
                   href={link.href}
                   className="rounded-lg px-4 py-3 text-base font-medium text-primary hover:bg-soft-mint"
-                  onClick={() => setMobileOpen(false)}
+                  onClick={() => {
+                    trackNavClick(link.label, link.href, "navbar_mobile");
+                    setMobileOpen(false);
+                  }}
                 >
                   {link.label}
                 </a>
@@ -95,7 +100,7 @@ export default function Navbar({ onBookCall }: NavbarProps) {
                   className="w-full"
                   onClick={() => {
                     setMobileOpen(false);
-                    onBookCall();
+                    onBookCall("navbar_mobile");
                   }}
                 >
                   Book a Call Now

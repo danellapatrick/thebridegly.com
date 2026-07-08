@@ -7,6 +7,7 @@ import {
   CONTACT_EMAIL,
 } from "@/lib/constants";
 import Logo from "@/components/Logo";
+import { trackNavClick, trackOutboundClick } from "@/lib/analytics/gtm";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -26,6 +27,9 @@ export default function Footer() {
             <a
               href={`mailto:${CONTACT_EMAIL}`}
               className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-brand hover:text-brand-light"
+              onClick={() =>
+                trackOutboundClick(`mailto:${CONTACT_EMAIL}`, "email", "footer")
+              }
             >
               <Mail className="h-4 w-4" />
               {CONTACT_EMAIL}
@@ -40,6 +44,7 @@ export default function Footer() {
                   <a
                     href={link.href}
                     className="text-sm text-stone-400 transition-colors hover:text-brand"
+                    onClick={() => trackNavClick(link.label, link.href, "footer")}
                   >
                     {link.label}
                   </a>
@@ -56,6 +61,7 @@ export default function Footer() {
                   <a
                     href={link.href}
                     className="text-sm text-stone-400 transition-colors hover:text-brand-light"
+                    onClick={() => trackNavClick(link.label, link.href, "footer")}
                   >
                     {link.label}
                   </a>
@@ -69,6 +75,9 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="rounded-lg border border-stone-700 bg-stone-800/50 p-2 text-stone-400 transition-colors hover:border-brand/50 hover:text-brand"
                 aria-label="LinkedIn"
+                onClick={() =>
+                  trackOutboundClick(SOCIAL_LINKS[0].href, "social", "footer")
+                }
               >
                 <Linkedin className="h-4 w-4" />
               </a>
@@ -78,6 +87,9 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="rounded-lg border border-stone-700 bg-stone-800/50 p-2 text-stone-400 transition-colors hover:border-brand/50 hover:text-brand"
                 aria-label="Instagram"
+                onClick={() =>
+                  trackOutboundClick(SOCIAL_LINKS[1].href, "social", "footer")
+                }
               >
                 <Instagram className="h-4 w-4" />
               </a>

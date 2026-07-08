@@ -1,7 +1,9 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { fadeUp } from "@/lib/motion";
+import { trackSectionView } from "@/lib/analytics/gtm";
 import { cn } from "@/lib/utils";
 
 interface SectionWrapperProps {
@@ -27,8 +29,31 @@ export default function SectionWrapper({
   background = "white",
   label,
 }: SectionWrapperProps) {
+  const sectionRef = useRef<HTMLElement>(null);
+  const hasTrackedView = useRef(false);
+
+  useEffect(() => {
+    if (!id || !sectionRef.current) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasTrackedView.current) {
+          hasTrackedView.current = true;
+          trackSectionView(id, label);
+        }
+      },
+      { threshold: 0.35 }
+    );
+
+    observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, [id, label]);
+
   return (
     <section
+      ref={sectionRef}
       id={id}
       className={cn("py-20 md:py-28 lg:py-32", bgMap[background], className)}
     >

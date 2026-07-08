@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import SectionWrapper from "@/components/SectionWrapper";
 import { INSIGHTS_STATS, TECH_STACK_LOGOS } from "@/lib/constants";
 import { fadeUp } from "@/lib/motion";
+import { pushGtmEvent } from "@/lib/analytics/gtm";
 
 const CYCLE_MS = 3500;
 
@@ -172,7 +173,13 @@ export default function InsightsSection() {
                   <button
                     key={index}
                     type="button"
-                    onClick={() => setActiveIndex(index)}
+                    onClick={() => {
+                      setActiveIndex(index);
+                      pushGtmEvent("insights_carousel_select", {
+                        insight_index: index,
+                        insight_value: INSIGHTS_STATS[index].value,
+                      });
+                    }}
                     className={`h-1.5 rounded-full transition-all duration-300 ${
                       index === activeIndex
                         ? "w-6 bg-brand"

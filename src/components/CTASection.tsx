@@ -1,17 +1,47 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import ContactForm from "@/components/ContactForm";
 import { fadeUp } from "@/lib/motion";
+import { CONTACT_EMAIL } from "@/lib/constants";
+import { trackOutboundClick, trackSectionView, type OnBookCall } from "@/lib/analytics/gtm";
 
 interface CTASectionProps {
-  onBookCall: () => void;
+  onBookCall: OnBookCall;
 }
 
 export default function CTASection({ onBookCall }: CTASectionProps) {
+  const sectionRef = useRef<HTMLElement>(null);
+  const hasTrackedView = useRef(false);
+
+  useEffect(() => {
+    const element = sectionRef.current;
+    if (!element) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasTrackedView.current) {
+          hasTrackedView.current = true;
+          trackSectionView("contact", "Contact");
+        }
+      },
+      { threshold: 0.35 }
+    );
+
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="contact" className="relative overflow-hidden py-20 md:py-28 lg:py-32">
+    <section
+      ref={sectionRef}
+      id="contact"
+      className="relative overflow-hidden py-20 md:py-28 lg:py-32"
+    >
       <div className="pointer-events-none absolute inset-0 mesh-bg bg-gradient-to-b from-soft-mint via-background to-white" />
       <div className="pointer-events-none absolute left-1/2 top-0 h-px w-2/3 -translate-x-1/2 bg-gradient-to-r from-transparent via-brand/50 to-transparent" />
 
@@ -32,10 +62,17 @@ export default function CTASection({ onBookCall }: CTASectionProps) {
             respond within 24 hours.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button variant="primary" size="lg" onClick={onBookCall}>
+            <Button variant="primary" size="lg" onClick={() => onBookCall("contact")}>
               Book a Call Now
             </Button>
-            <Button variant="secondary" size="lg" href="mailto:hello@thebridgely.com">
+            <Button
+              variant="secondary"
+              size="lg"
+              href={`mailto:${CONTACT_EMAIL}`}
+              onClick={() =>
+                trackOutboundClick(`mailto:${CONTACT_EMAIL}`, "email", "contact")
+              }
+            >
               Contact Us
             </Button>
           </div>

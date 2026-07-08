@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { CALENDLY_URL, getCalendlyEmbedUrl } from "@/lib/constants";
+import { pushGtmEvent, trackOutboundClick } from "@/lib/analytics/gtm";
 
 interface CalendlyModalProps {
   isOpen: boolean;
@@ -10,6 +11,10 @@ interface CalendlyModalProps {
 }
 
 export default function CalendlyModal({ isOpen, onClose }: CalendlyModalProps) {
+  const handleClose = () => {
+    pushGtmEvent("calendly_modal_close");
+    onClose();
+  };
   return (
     <AnimatePresence>
       {isOpen && (
@@ -19,7 +24,7 @@ export default function CalendlyModal({ isOpen, onClose }: CalendlyModalProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={onClose}
+            onClick={handleClose}
           />
           <motion.div
             className="fixed inset-4 z-50 mx-auto flex max-h-[90vh] max-w-3xl flex-col overflow-hidden rounded-2xl bg-white shadow-2xl sm:inset-8 md:inset-12"
@@ -34,7 +39,7 @@ export default function CalendlyModal({ isOpen, onClose }: CalendlyModalProps) {
               </h3>
               <button
                 type="button"
-                onClick={onClose}
+                onClick={handleClose}
                 className="rounded-lg p-2 text-secondary transition-colors hover:bg-soft-bg hover:text-primary"
                 aria-label="Close modal"
               >
@@ -57,6 +62,9 @@ export default function CalendlyModal({ isOpen, onClose }: CalendlyModalProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-medium text-brand hover:text-brand-dark"
+                onClick={() =>
+                  trackOutboundClick(CALENDLY_URL, "calendly", "calendly_modal")
+                }
               >
                 Open booking page in a new tab
               </a>

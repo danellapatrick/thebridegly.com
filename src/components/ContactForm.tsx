@@ -6,6 +6,7 @@ import { Send, CheckCircle2, AlertCircle } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { LEAD_INTENTS, CONTACT_EMAIL } from "@/lib/constants";
 import { fadeUp } from "@/lib/motion";
+import { pushGtmEvent } from "@/lib/analytics/gtm";
 import type { LeadIntent } from "@/lib/constants";
 
 const inputClass =
@@ -44,13 +45,27 @@ export default function ContactForm() {
       const result = (await res.json().catch(() => ({}))) as { error?: string };
 
       if (!res.ok) {
+        pushGtmEvent("lead_form_error", {
+          error_message: result.error ?? "unknown_error",
+          intent,
+        });
         setError(result.error ?? "Something went wrong. Please try again.");
         return;
       }
 
+      pushGtmEvent("generate_lead", {
+        intent,
+        has_company: Boolean(payload.company),
+        form_location: "contact",
+      });
+
       setSubmitted(true);
       form.reset();
     } catch {
+      pushGtmEvent("lead_form_error", {
+        error_message: "network_error",
+        intent,
+      });
       setError(
         `Could not send your message. Please email us at ${CONTACT_EMAIL}.`
       );
