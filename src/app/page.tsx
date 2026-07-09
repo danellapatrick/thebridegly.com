@@ -16,6 +16,7 @@ import CalendlyModal from "@/components/CalendlyModal";
 import HowItWorksSection from "@/components/sections/HowItWorksSection";
 import InsightsSection from "@/components/sections/InsightsSection";
 import { pushGtmEvent, type BookCallSource } from "@/lib/analytics/gtm";
+import PortfolioSection from "@/components/sections/PortfolioSection";
 
 export default function Home() {
   const [calendlyOpen, setCalendlyOpen] = useState(false);
@@ -41,7 +42,7 @@ export default function Home() {
         <WhyPakistanSection />
         <ProblemSection onBookCall={openCalendly} />
         <HowItWorksSection />
-
+        <PortfolioSection />
         <InsightsSection />
         <CTASection onBookCall={openCalendly} />
       </main>
